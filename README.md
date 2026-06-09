@@ -1,251 +1,177 @@
-# 🚀 AI/ML Engineering Internship Projects
+# 📰 News Topic Classifier Using BERT
 
-This repository contains a collection of projects completed during my **AI/ML Engineering Internship at DevelopersHub Corporation**. The projects cover various domains of Machine Learning, Deep Learning, Natural Language Processing (NLP), Large Language Models (LLMs), Prompt Engineering, and Production-Ready ML Pipelines.
-
-The goal of these projects was to gain hands-on experience in building, training, evaluating, and deploying modern AI/ML solutions using industry-standard tools and frameworks.
-
----
-
-# 📚 Projects Included
-
-## 1️⃣ News Topic Classifier Using BERT
-
-### Overview
-
-A Natural Language Processing project that fine-tunes **BERT (bert-base-uncased)** on the **AG News Dataset** to automatically classify news headlines into four categories:
+A deep learning NLP project that fine-tunes **BERT (bert-base-uncased)** on the **AG News Dataset** to automatically classify news headlines into four categories:
 
 * 🌍 World
 * ⚽ Sports
 * 💼 Business
 * 🔬 Sci/Tech
 
-### Technologies
+The model is trained using the Hugging Face Transformers ecosystem and achieves over **91% classification accuracy**.
+
+---
+
+## 🚀 Project Overview
+
+News articles are generated at an enormous scale every day. Automatically categorizing news content helps improve:
+
+* News recommendation systems
+* Content organization
+* Search and retrieval
+* Personalized news feeds
+* Media monitoring platforms
+
+This project demonstrates how transformer-based language models can be fine-tuned for high-performance text classification.
+
+---
+
+## 📊 Dataset
+
+**Dataset:** AG News Dataset
+
+* Training Samples: 120,000
+* Test Samples: 7,600
+* Classes: 4
+
+For faster experimentation:
+
+* Training Subset: 8,000 samples
+* Test Subset: 2,000 samples
+
+### Categories
+
+| Label | Category |
+| ----- | -------- |
+| 0     | World    |
+| 1     | Sports   |
+| 2     | Business |
+| 3     | Sci/Tech |
+
+---
+
+## 🛠 Technologies Used
 
 * Python
 * PyTorch
 * Hugging Face Transformers
+* Hugging Face Datasets
 * Scikit-Learn
-* Gradio
 * Matplotlib
 * Seaborn
+* Gradio
 
-### Results
+---
 
-| Metric            | Value  |
+## ⚙️ Model Architecture
+
+Base Model:
+
+```text
+bert-base-uncased
+```
+
+Configuration:
+
+* Maximum Sequence Length: 128
+* Epochs: 3
+* Learning Rate: 2e-5
+* Batch Size: 16
+* Weight Decay: 0.01
+
+---
+
+## 📈 Results
+
+### Overall Performance
+
+| Metric            | Score  |
 | ----------------- | ------ |
 | Accuracy          | 91.65% |
 | Weighted F1 Score | 0.9165 |
+| Evaluation Loss   | 0.2967 |
 
-### Key Features
+### Classification Report
 
-✔ Fine-tuned BERT model
-
-✔ News headline classification
-
-✔ Interactive Gradio deployment
-
-✔ Confusion matrix and loss visualization
-
-✔ Model export for production use
+| Class    | Precision | Recall | F1 Score |
+| -------- | --------- | ------ | -------- |
+| World    | 0.94      | 0.90   | 0.92     |
+| Sports   | 0.97      | 0.98   | 0.98     |
+| Business | 0.92      | 0.86   | 0.89     |
+| Sci/Tech | 0.85      | 0.93   | 0.89     |
 
 ---
 
-## 2️⃣ End-to-End ML Pipeline for Customer Churn Prediction
+## 📊 Visualizations
 
-### Overview
+The project includes:
 
-A production-ready machine learning pipeline built using **Scikit-Learn** to predict customer churn using the IBM Telco Customer Churn Dataset.
-
-The project demonstrates the complete machine learning workflow from data preprocessing to model deployment.
-
-### Technologies
-
-* Python
-* Pandas
-* NumPy
-* Scikit-Learn
-* Joblib
-* Matplotlib
-* Seaborn
-
-### Models Implemented
-
-* Logistic Regression
-* Random Forest Classifier
-
-### Results
-
-| Model               | Accuracy | F1 Score | ROC-AUC |
-| ------------------- | -------- | -------- | ------- |
-| Logistic Regression | 80.55%   | 0.6040   | 0.8420  |
-| Random Forest       | 80.06%   | 0.5800   | 0.8417  |
-
-🏆 Best Model: Logistic Regression
-
-### Key Features
-
-✔ Automated preprocessing pipeline
-
-✔ One-Hot Encoding & Feature Scaling
-
-✔ Hyperparameter tuning using GridSearchCV
-
-✔ ROC Curve analysis
-
-✔ Feature importance visualization
-
-✔ Exportable production pipelines using Joblib
+* Class Distribution Analysis
+* Confusion Matrix
+* Training Loss Curve
+* Evaluation Loss Tracking
 
 ---
 
-## 3️⃣ Auto Tagging Support Tickets Using LLM
+## 🌐 Gradio Deployment
 
-### Overview
+An interactive Gradio application was built to test predictions in real-time.
 
-An NLP project that compares **Prompt Engineering** and **Model Fine-Tuning** approaches for automatically categorizing customer support tickets.
+Example Headlines:
 
-Three approaches were implemented:
+* NASA launches new telescope to study distant galaxies
+* Stock market hits record high amid strong earnings
+* Brazil wins the World Cup in a thrilling final
 
-* Zero-Shot Classification (LLaMA 3 via Groq)
-* Few-Shot Classification (LLaMA 3 via Groq)
-* Fine-Tuned DistilBERT
-
-### Ticket Categories
-
-* Billing and Payments
-* Customer Service
-* IT Support
-* Product Support
-* Technical Support
-
-### Technologies
-
-* Python
-* Groq API
-* LLaMA 3.1
-* DistilBERT
-* Hugging Face Transformers
-* PyTorch
-* Scikit-Learn
-
-### Results
-
-| Approach              | Accuracy | F1 Score |
-| --------------------- | -------- | -------- |
-| Zero-Shot LLaMA 3     | 36.0%    | 0.3225   |
-| Few-Shot LLaMA 3      | 52.0%    | 0.4768   |
-| Fine-Tuned DistilBERT | 70.0%    | 0.6333   |
-
-🏆 Best Approach: Fine-Tuned DistilBERT
-
-### Key Features
-
-✔ Prompt Engineering
-
-✔ Zero-Shot Learning
-
-✔ Few-Shot Learning
-
-✔ DistilBERT Fine-Tuning
-
-✔ Top-3 Tag Prediction
-
-✔ Comparative Performance Analysis
+The model returns category probabilities for all four classes.
 
 ---
 
-# 🛠️ Skills Demonstrated
+## 💾 Model Export
 
-### Machine Learning
+The trained model and tokenizer are saved locally:
 
-* Supervised Learning
-* Classification
-* Feature Engineering
-* Model Evaluation
-* Hyperparameter Optimization
+```bash
+./bert-ag-news-final
+```
 
-### Deep Learning
-
-* BERT Fine-Tuning
-* DistilBERT Fine-Tuning
-* Transfer Learning
-* Transformer Architectures
-
-### Natural Language Processing
-
-* Text Classification
-* Tokenization
-* Prompt Engineering
-* LLM Applications
-
-### MLOps & Production
-
-* Scikit-Learn Pipelines
-* Model Serialization
-* Reusable ML Workflows
-* Interactive Model Deployment
-
----
-
-# 📊 Project Summary
-
-| Project                     | Domain           | Model               | Best Accuracy |
-| --------------------------- | ---------------- | ------------------- | ------------- |
-| News Topic Classifier       | NLP              | BERT                | 91.65%        |
-| Customer Churn Prediction   | Machine Learning | Logistic Regression | 80.55%        |
-| Support Ticket Auto Tagging | NLP + LLM        | DistilBERT          | 70.00%        |
-
----
-
-# 📂 Repository Structure
+Files include:
 
 ```text
-AI-ML-Internship-Projects/
-│
-├── News-Topic-Classifier-BERT/
-│   ├── notebook.ipynb
-│   ├── model/
-│   └── README.md
-│
-├── Customer-Churn-ML-Pipeline/
-│   ├── notebook.ipynb
-│   ├── pipelines/
-│   └── README.md
-│
-├── Auto-Tagging-Support-Tickets/
-│   ├── notebook.ipynb
-│   ├── distilbert-model/
-│   └── README.md
-│
+config.json
+model.safetensors
+tokenizer.json
+tokenizer_config.json
+special_tokens_map.json
+```
+
+---
+
+## 📂 Project Structure
+
+```text
+├── notebook.ipynb
+├── bert-ag-news-final/
+├── class_distribution.png
+├── confusion_matrix.png
+├── loss_curve.png
+├── requirements.txt
 └── README.md
 ```
 
 ---
 
-# 🎯 Internship Learning Outcomes
+## 🎯 Key Learnings
 
-Through these projects, I gained practical experience in:
-
-* Building end-to-end machine learning systems
-* Fine-tuning transformer-based NLP models
-* Applying Large Language Models (LLMs) to real-world tasks
-* Designing reusable production-ready ML pipelines
-* Evaluating and comparing multiple AI approaches
-* Deploying machine learning solutions for interactive use
+* Fine-tuning transformer models for NLP classification
+* Tokenization and preprocessing with Hugging Face
+* Model evaluation using Accuracy and F1 Score
+* Building inference pipelines
+* Deploying NLP models with Gradio
 
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
-**Muhammad Sharjeel Faisal**
+Muhammad Sharjeel Faisal
 
-Computer Science Undergraduate | AI/ML Enthusiast | Full-Stack Developer
-
-### Connect With Me
-
-* LinkedIn: [www.linkedin.com/in/muhammad-sharjeel-faisal](http://www.linkedin.com/in/muhammad-sharjeel-faisal)
-* GitHub: https://github.com/Sharjeel-faisal
-
----
-
-⭐ If you found these projects useful, consider giving the repository a star.
+AI/ML Engineering Internship Project
